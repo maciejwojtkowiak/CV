@@ -4,7 +4,8 @@ import { useState, useRef, useEffect } from "react";
 const Slider = () => {
   const [width, setWidth] = useState<number>(0);
   const widthOfContainer = useRef<HTMLDivElement>(null);
-
+  const [percentOfTransformToMove, setPercentOfTransformToMove] =
+    useState<number>(0);
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
       setWidth(
@@ -12,37 +13,15 @@ const Slider = () => {
           widthOfContainer.current.offsetWidth
       );
 
-      console.log(
-        widthOfContainer.current.scrollWidth,
-        widthOfContainer.current.offsetWidth
+      setPercentOfTransformToMove(
+        (widthOfContainer.current!.offsetWidth /
+          widthOfContainer.current!.scrollWidth) *
+          100
       );
     }
   }, [widthOfContainer.current?.offsetWidth]);
-  let percent = 1;
-  let percentFull = false;
-  // uzyj framer motion
-  setInterval(() => {
-    widthOfContainer.current!.style.transform = `translateX(${-percent}%)`;
-    widthOfContainer.current!.style.transition = "1s";
-    if (
-      percent >=
-      (widthOfContainer.current!.offsetWidth /
-        widthOfContainer.current!.scrollWidth) *
-        100
-    ) {
-      percentFull = true;
-    }
-    if (percent <= 0) {
-      percentFull = false;
-    }
 
-    if (percentFull) {
-      percent -= 5;
-    }
-    if (!percentFull) {
-      percent += 5;
-    }
-  }, 600);
+  console.log(percentOfTransformToMove);
 
   console.log(widthOfContainer.current?.offsetWidth);
   return (
@@ -53,6 +32,14 @@ const Slider = () => {
           className="h-full"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
+          initial={{ transform: "translateX(0%)" }}
+          animate={{
+            transform: `translateX(${-percentOfTransformToMove}%)`.toString(),
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+          }}
         >
           <div
             className={`h-full grid grid-flow-col mx-16 mt-4 gap-8`}
