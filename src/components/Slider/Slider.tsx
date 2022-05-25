@@ -26,7 +26,7 @@ const Slider = () => {
   console.log(widthOfContainer.current?.offsetWidth);
   return (
     <div className="h-[70vh] overflow-hidden">
-      <h1 className="text-center text-4xl mt-8">SLIDER</h1>
+      <h1 className="text-center text-4xl mt-8">Skills</h1>
       <div className={`h-full bg-red-100 w-[${"100px"}]`}>
         <motion.div
           className="h-full"
@@ -37,7 +37,8 @@ const Slider = () => {
             transform: `translateX(${-percentOfTransformToMove}%)`.toString(),
           }}
           transition={{
-            duration: 20,
+            duration: 15,
+            repeatType: "reverse",
             repeat: Infinity,
           }}
         >
