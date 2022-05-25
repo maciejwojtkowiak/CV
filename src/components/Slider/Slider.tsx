@@ -6,10 +6,21 @@ const Slider = () => {
   const widthOfContainer = useRef<HTMLDivElement>(null);
   const widthOfSlide = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (widthOfContainer.current?.offsetWidth) {
-      setWidth(widthOfContainer.current?.offsetWidth);
+    if (
+      widthOfContainer.current?.offsetWidth &&
+      widthOfSlide.current?.offsetWidth
+    ) {
+      const visibleWidth = widthOfContainer.current.clientWidth;
+
+      setWidth(
+        widthOfContainer.current?.offsetWidth -
+          (visibleWidth - widthOfSlide.current?.offsetWidth + 80)
+      );
     }
-  }, [widthOfContainer.current?.offsetWidth]);
+  }, [
+    widthOfContainer.current?.offsetWidth,
+    widthOfSlide.current?.offsetWidth,
+  ]);
 
   console.log(widthOfContainer.current?.offsetWidth);
   return (
@@ -29,7 +40,7 @@ const Slider = () => {
             <div className="h-5/6  w-96 bg-red-300"></div>
             <div className="h-5/6  w-96 bg-red-400"></div>
             <div className="h-5/6  w-96 bg-red-500"></div>
-            <div className="h-5/6  w-96 bg-red-500"></div>
+            <div className="h-5/6  w-96 bg-red-500" ref={widthOfSlide}></div>
           </div>
         </motion.div>
       </div>
