@@ -1,12 +1,19 @@
-import Navbar from "../navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
+import Slider from "../Slider/Slider";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
+import React from "react";
 
 const Main = () => {
   return (
-    <div>
+    <React.Fragment>
       <Navbar />
       <Home />
-    </div>
+      <Slider />
+      <Contact />
+      <Footer />
+    </React.Fragment>
   );
 };
 
