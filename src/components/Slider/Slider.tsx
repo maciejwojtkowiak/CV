@@ -1,5 +1,7 @@
 import { motion, useAnimationFrame } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import htmlImg from "../../images/html5.png";
+import jsImg from "../../images/js.png";
 
 const Slider = () => {
   const [width, setWidth] = useState<number>(0);
@@ -46,8 +48,20 @@ const Slider = () => {
             className={`h-full grid grid-flow-col mx-16 mt-4 gap-8`}
             ref={widthOfContainer}
           >
-            <div className="h-5/6 w-[32rem] bg-red-500"></div>
-            <div className="h-5/6  w-[32rem] bg-red-300"></div>
+            <div className="grid grid-rows-auto text-center h-5/6 w-[32rem] bg-red-500  ">
+              <div className="grid place-items-center">
+                <h1 className="text-white text-4xl ">Javascript</h1>
+              </div>
+
+              <img
+                className="w-48  justify-self-center"
+                src={jsImg}
+                alt="skill"
+              />
+            </div>
+            <div className="h-5/6  w-[32rem] bg-red-300">
+              <img src={htmlImg} alt="skill" />
+            </div>
             <div className="h-5/6  w-[32rem] bg-red-400"></div>
             <div className="h-5/6  w-[32rem] bg-red-500"></div>
             <div className="h-5/6 w-[32rem] bg-red-500"></div>
