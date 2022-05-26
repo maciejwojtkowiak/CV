@@ -2,6 +2,7 @@ import { motion, useAnimationFrame } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import htmlImg from "../../images/html5.png";
 import jsImg from "../../images/js.png";
+import SliderItem from "./SliderItem";
 
 const Slider = () => {
   const [width, setWidth] = useState<number>(0);
@@ -49,15 +50,7 @@ const Slider = () => {
             ref={widthOfContainer}
           >
             <div className="grid grid-rows-auto text-center h-5/6 w-[32rem] bg-red-500  ">
-              <div className="grid place-items-center">
-                <h1 className="text-white text-4xl ">Javascript</h1>
-              </div>
-
-              <img
-                className="w-48  justify-self-center"
-                src={jsImg}
-                alt="skill"
-              />
+              <SliderItem />
             </div>
             <div className="h-5/6  w-[32rem] bg-red-300">
               <img src={htmlImg} alt="skill" />
