@@ -1,6 +1,7 @@
-import Navbar from "../navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
 import Slider from "../Slider/Slider";
+import Contact from "../Contact/Contact";
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
       <Navbar />
       <Home />
       <Slider />
+      <Contact />
     </div>
   );
 };

@@ -1,8 +1,15 @@
-import { motion, useAnimationFrame } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import SliderItem from "./SliderItem";
 import htmlImg from "../../images/html5.png";
 import jsImg from "../../images/js.png";
-import SliderItem from "./SliderItem";
+import cssImg from "../../images/css.png";
+import tsImg from "../../images/typescript.png";
+import reactImg from "../../images/react.png";
+import nextImg from "../../images/nextjs.png";
+import reduxImg from "../../images/redux.png";
+import gitImg from "../../images/git.png";
+import tailwindImg from "../../images/tailwind.png";
 
 const Slider = () => {
   const [width, setWidth] = useState<number>(0);
@@ -15,29 +22,21 @@ const Slider = () => {
         widthOfContainer.current.scrollWidth -
           widthOfContainer.current.offsetWidth
       );
-
-      setPercentOfTransformToMove(
-        (widthOfContainer.current!.offsetWidth /
-          widthOfContainer.current!.scrollWidth) *
-          100
-      );
     }
   }, [widthOfContainer.current?.offsetWidth]);
 
-  console.log(percentOfTransformToMove);
-
-  console.log(widthOfContainer.current?.offsetWidth);
   return (
-    <div className="h-[70vh] overflow-hidden">
-      <h1 className="text-center text-4xl mt-8">Skills</h1>
-      <div className={`h-full bg-red-100 w-[${"100px"}]`}>
+    <React.Fragment>
+      <div className="overflow-hidden bg-stone-700">
+        <h1 className="text-center text-4xl ">Skills</h1>
+
         <motion.div
-          className="h-full"
+          className="h-full h-[32rem] "
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
           initial={{ transform: "translateX(0%)" }}
           animate={{
-            transform: `translateX(${-percentOfTransformToMove}%)`.toString(),
+            transform: `translateX(-100%)`,
           }}
           transition={{
             duration: 15,
@@ -46,22 +45,22 @@ const Slider = () => {
           }}
         >
           <div
-            className={`h-full grid grid-flow-col mx-16 mt-4 gap-8`}
+            className={`h-full grid grid-flow-col py-8 ml-16 gap-8`}
             ref={widthOfContainer}
           >
-            <div className="grid grid-rows-auto text-center h-5/6 w-[32rem] bg-red-500  ">
-              <SliderItem title="Javascript" skillImage={jsImg} />
-            </div>
-            <div className="h-5/6  w-[32rem] bg-red-300">
-              <img src={htmlImg} alt="skill" />
-            </div>
-            <div className="h-5/6  w-[32rem] bg-red-400"></div>
-            <div className="h-5/6  w-[32rem] bg-red-500"></div>
-            <div className="h-5/6 w-[32rem] bg-red-500"></div>
+            <SliderItem title="Javascript" skillImage={jsImg} />
+            <SliderItem title="Typescript" skillImage={tsImg} />
+            <SliderItem title="React" skillImage={reactImg} />
+            <SliderItem title="NextJS" skillImage={nextImg} />
+            <SliderItem title="HTML5" skillImage={htmlImg} />
+            <SliderItem title="CSS3" skillImage={cssImg} />
+            <SliderItem title="GIT" skillImage={gitImg} />
+            <SliderItem title="Redux" skillImage={reduxImg} />
+            <SliderItem title="Tailwind" skillImage={tailwindImg} />
           </div>
         </motion.div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
