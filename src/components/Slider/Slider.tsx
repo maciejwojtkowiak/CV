@@ -50,7 +50,7 @@ const Slider = () => {
             ref={widthOfContainer}
           >
             <div className="grid grid-rows-auto text-center h-5/6 w-[32rem] bg-red-500  ">
-              <SliderItem />
+              <SliderItem title="Javascript" skillImage={jsImg} />
             </div>
             <div className="h-5/6  w-[32rem] bg-red-300">
               <img src={htmlImg} alt="skill" />
