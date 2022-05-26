@@ -45,7 +45,7 @@ const Slider = () => {
           }}
         >
           <div
-            className={`h-full grid grid-flow-col py-8 ml-16 gap-8`}
+            className={`h-full grid grid-flow-col py-8 mx-8 gap-8`}
             ref={widthOfContainer}
           >
             <SliderItem title="Javascript" skillImage={jsImg} />
