@@ -27,8 +27,8 @@ const Slider = () => {
 
   return (
     <React.Fragment>
-      <div className="overflow-hidden bg-stone-700">
-        <h1 className="text-center text-4xl ">Skills</h1>
+      <div className="overflow-hidden bg-black">
+        <h1 className="text-center text-4xl text-white ">Skills</h1>
 
         <motion.div
           className="h-full h-[32rem] "
