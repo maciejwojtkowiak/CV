@@ -43,7 +43,7 @@ const Landing = () => {
 
   return (
     <motion.div
-      className="h-screen grid bg-black text-white content-center justify-center text-center"
+      className="h-screen grid bg-black text-white content-center justify-center text-center "
       variants={container}
       initial="hidden"
       animate="visible"
@@ -53,7 +53,6 @@ const Landing = () => {
         variants={container}
         initial="hidden"
         animate="visible"
-        exit={() => setAnimationEndedHandler}
       >
         {line1Array.map((letter, i) => (
           <motion.span
