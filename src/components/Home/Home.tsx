@@ -1,26 +1,21 @@
 import { motion } from "framer-motion";
 
 const Home = () => {
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
   return (
-    <div className="h-screen bg-black">
+    <div className="h-screen bg-black overflow-hidden">
       <div className="h-full grid grid-flow-col">
         <div className="text-white self-center font-[codeFont] text-[15rem]">
           <motion.div
+            className="cursor-pointer"
+            whileHover={{
+              rotate: 360,
+            }}
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
             }}
             transition={{
-              duration: 3,
-              repeat: Infinity,
-              repeatType: "reverse",
+              duration: 1,
             }}
           >
             {"<M>"}
@@ -28,7 +23,20 @@ const Home = () => {
         </div>
         <div className="ml-8 grid font-[codeFont]">
           <div className="self-end">
-            <h1 className="text-white mb-4   text-4xl">My Journey</h1>
+            <motion.h1
+              className="text-white mb-8    text-4xl"
+              animate={{
+                x: 15,
+                y: 15,
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              My Journey
+            </motion.h1>
           </div>
           <p className="text-white  text-xl pr-32">
             It started in May 2021, when I accidentally saw a programming
