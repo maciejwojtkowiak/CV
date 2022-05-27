@@ -4,11 +4,12 @@ import Slider from "../Slider/Slider";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
 import React from "react";
+import Landing from "../Landing/Landing";
 
 const Main = () => {
   return (
     <React.Fragment>
-      <Navbar />
+      <Landing />
       <Home />
       <Slider />
       <Contact />

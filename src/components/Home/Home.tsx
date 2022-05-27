@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
 
 const Home = () => {
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
   return (
     <div className="h-screen bg-black">
       <div className="h-full grid grid-flow-col">
