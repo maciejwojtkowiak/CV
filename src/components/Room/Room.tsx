@@ -6,11 +6,21 @@ const Room = () => {
   const roomModel = useLoader(GLTFLoader, "room.glb");
   console.log(roomModel);
   return (
-    <Canvas>
-      <Suspense>
-        <primitive object={roomModel.scene} />
-      </Suspense>
-    </Canvas>
+    <div className="h-screen">
+      <Canvas>
+        <ambientLight intensity={1} />
+        <spotLight
+          intensity={0.5}
+          angle={0.1}
+          penumbra={1}
+          position={[10, 15, 10]}
+          castShadow
+        />
+        <Suspense>
+          <primitive object={roomModel.scene} />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 
