@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const Landing = () => {
   const container = {
@@ -14,7 +13,7 @@ const Landing = () => {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.35,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -31,20 +30,13 @@ const Landing = () => {
     },
   };
 
-  const [firstAnimationEnded, setFirstAnimationEnded] =
-    useState<boolean>(false);
-
-  const setAnimationEndedHandler = () => {
-    setFirstAnimationEnded(true);
-  };
-
-  const line1Array = "Maciej Wojtkowiak".split("");
-  const line2Array = "Hobbyist programmer".split("");
+  const line1Array = "Maciej Wojtkowiak Hobbyist programmer".split("");
 
   return (
     <motion.div
       className="h-screen grid bg-black text-white content-center justify-center text-center "
       variants={container}
+      custom={1}
       initial="hidden"
       animate="visible"
     >
@@ -69,17 +61,7 @@ const Landing = () => {
         variants={container}
         initial="hidden"
         animate="visible"
-      >
-        {line2Array.map((letter, i) => (
-          <motion.span
-            className="text-white"
-            key={letter + i}
-            variants={nameAnimation}
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </motion.h3>
+      ></motion.h3>
     </motion.div>
   );
 };
