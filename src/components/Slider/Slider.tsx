@@ -24,7 +24,9 @@ const Slider: React.FC<funcProps> = (props) => {
   return (
     <React.Fragment>
       <div className="overflow-hidden bg-black">
-        <h1 className="text-center text-4xl text-white ">Skills</h1>
+        <h1 className="text-center text-4xl text-white ">
+          {props.sliderTitle}
+        </h1>
 
         <motion.div
           className="h-full h-[32rem] "
