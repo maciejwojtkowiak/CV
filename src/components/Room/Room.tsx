@@ -6,8 +6,8 @@ const Room = () => {
   const roomModel = useLoader(GLTFLoader, "room.glb");
   console.log(roomModel);
   return (
-    <div className="h-screen">
-      <Canvas>
+    <div className="h-screen bg-black">
+      <Canvas camera={{ position: [1, 4, 1] }}>
         <ambientLight intensity={1} />
         <spotLight
           intensity={0.5}
