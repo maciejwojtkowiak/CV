@@ -1,21 +1,17 @@
 import { motion } from "framer-motion";
 import React, { useState, useRef, useEffect } from "react";
 import SliderItem from "./SliderItem";
-import htmlImg from "../../images/html5.png";
-import jsImg from "../../images/js.png";
-import cssImg from "../../images/css.png";
-import tsImg from "../../images/typescript.png";
-import reactImg from "../../images/react.png";
-import nextImg from "../../images/nextjs.png";
-import reduxImg from "../../images/redux.png";
-import gitImg from "../../images/git.png";
-import tailwindImg from "../../images/tailwind.png";
+import { SlideList } from "../../shared/types";
 
-const Slider = () => {
+interface funcProps {
+  sliderTitle: string;
+  slideList: SlideList[];
+}
+
+const Slider: React.FC<funcProps> = (props) => {
   const [width, setWidth] = useState<number>(0);
   const widthOfContainer = useRef<HTMLDivElement>(null);
-  const [percentOfTransformToMove, setPercentOfTransformToMove] =
-    useState<number>(0);
+
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
       setWidth(
@@ -48,15 +44,12 @@ const Slider = () => {
             className={`h-full grid grid-flow-col py-8 mx-8 gap-8`}
             ref={widthOfContainer}
           >
-            <SliderItem title="Javascript" skillImage={jsImg} />
-            <SliderItem title="Typescript" skillImage={tsImg} />
-            <SliderItem title="React" skillImage={reactImg} />
-            <SliderItem title="NextJS" skillImage={nextImg} />
-            <SliderItem title="HTML5" skillImage={htmlImg} />
-            <SliderItem title="CSS3" skillImage={cssImg} />
-            <SliderItem title="GIT" skillImage={gitImg} />
-            <SliderItem title="Redux" skillImage={reduxImg} />
-            <SliderItem title="Tailwind" skillImage={tailwindImg} />
+            {props.slideList.map((slide) => (
+              <SliderItem
+                title={slide.slideName}
+                skillImage={slide.slideImgUrl}
+              />
+            ))}
           </div>
         </motion.div>
       </div>
