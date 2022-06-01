@@ -5,6 +5,7 @@ import React from "react";
 import Landing from "../Landing/Landing";
 import Room from "../Room/Room";
 import Skills from "../Slider/Skills/Skills";
+import UsedTechnologies from "../Slider/UsedTechnologies/UsedTechnologies";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <Room />
       <Home />
       <Skills />
+      <UsedTechnologies />
       <Footer />
     </React.Fragment>
   );

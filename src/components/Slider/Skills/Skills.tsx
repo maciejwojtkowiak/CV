@@ -1,14 +1,14 @@
 import { SlideList } from "../../../shared/types";
 import Slider from "../Slider";
-import htmlImg from "../../images/html5.png";
-import jsImg from "../../images/js.png";
-import cssImg from "../../images/css.png";
-import tsImg from "../../images/typescript.png";
-import reactImg from "../../images/react.png";
-import nextImg from "../../images/nextjs.png";
-import reduxImg from "../../images/redux.png";
-import gitImg from "../../images/git.png";
-import tailwindImg from "../../images/tailwind.png";
+import htmlImg from "../../../images/html5.png";
+import jsImg from "../../../images/js.png";
+import cssImg from "../../../images/css.png";
+import tsImg from "../../../images/typescript.png";
+import reactImg from "../../../images/react.png";
+import nextImg from "../../../images/nextjs.png";
+import reduxImg from "../../../images/redux.png";
+import gitImg from "../../../images/git.png";
+import tailwindImg from "../../../images/tailwind.png";
 
 const Skills = () => {
   const skillObjectArray = [
