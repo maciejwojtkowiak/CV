@@ -1,26 +1,18 @@
-import { Canvas, useLoader } from "@react-three/fiber";
-import { Suspense } from "react";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { Suspense, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Mesh } from "three";
 
 const Room = () => {
   const roomModel = useLoader(GLTFLoader, "room.glb");
-  console.log(roomModel);
+  const modelRef = useRef<Mesh>(null);
+  useFrame((state, delta) => (modelRef.current!.rotation.x += 0.01));
   return (
-    <div className="h-screen bg-black">
-      <Canvas camera={{ position: [1, 4, 1] }}>
-        <ambientLight intensity={1} />
-        <spotLight
-          intensity={0.5}
-          angle={0.1}
-          penumbra={1}
-          position={[10, 15, 10]}
-          castShadow
-        />
-        <Suspense>
-          <primitive object={roomModel.scene} />
-        </Suspense>
-      </Canvas>
-    </div>
+    <Suspense>
+      <mesh ref={modelRef} position={[1, 1, 1]}>
+        <primitive object={roomModel.scene} />
+      </mesh>
+    </Suspense>
   );
 };
 
