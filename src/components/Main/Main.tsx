@@ -6,11 +6,13 @@ import Skills from "../Slider/Skills/Skills";
 import UsedTechnologies from "../Slider/UsedTechnologies/UsedTechnologies";
 import Projects from "../Slider/Projects/Projects";
 import RoomCanvas from "../Room/RoomCanvas";
+import Navbar from "../Navbar/Navbar";
 // jasny motyw, bezowy z brazowymi napisami
 const Main = () => {
   return (
     <React.Fragment>
       <div className="bg-gradient-to-t from-amber-100">
+        <Navbar />
         <Landing />
         <RoomCanvas />
         <Home />

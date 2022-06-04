@@ -24,7 +24,7 @@ const Home = () => {
         <div className="ml-8 grid font-[codeFont]">
           <div className="self-end">
             <motion.h1
-              className="text-yellow-700 mb-8    text-4xl"
+              className="text-yellow-700 mb-8 text-4xl"
               animate={{
                 x: 15,
                 y: 15,
