@@ -5,7 +5,7 @@ const Projects = () => {
   const ProjectsList = [
     { slideName: "Recipemaster", slideImgUrl: "123" },
   ] as SlideList[];
-  return <Slider sliderTitle="Projects" slideList={ProjectsList} />;
+  return <h1>Hej</h1>;
 };
 
 export default Projects;

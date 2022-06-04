@@ -6,18 +6,19 @@ import { SlideList } from "../../shared/types";
 interface funcProps {
   sliderTitle: string;
   slideList: SlideList[];
+  isSkills: boolean;
 }
 
 const Slider: React.FC<funcProps> = (props) => {
   const [width, setWidth] = useState<number>(0);
   const widthOfContainer = useRef<HTMLDivElement>(null);
+  console.log(props.sliderTitle);
+  console.log("width");
+  console.log(width);
 
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
-      setWidth(
-        widthOfContainer.current.scrollWidth -
-          widthOfContainer.current.offsetWidth
-      );
+      setWidth(props.isSkills ? 3025 : 1393);
     }
   }, [widthOfContainer.current?.offsetWidth]);
 
@@ -48,6 +49,7 @@ const Slider: React.FC<funcProps> = (props) => {
           >
             {props.slideList.map((slide) => (
               <SliderItem
+                key={slide.slideName}
                 title={slide.slideName}
                 skillImage={slide.slideImgUrl}
               />
