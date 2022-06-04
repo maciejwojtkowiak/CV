@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div className="h-screen bg-black overflow-hidden">
+    <div className="h-screen overflow-hidden">
       <div className="h-full grid grid-flow-col">
-        <div className="text-white self-center font-[codeFont] text-[15rem]">
+        <div className="text-yellow-700 self-center font-[codeFont] text-[15rem]">
           <motion.div
             className="cursor-pointer"
             whileHover={{
@@ -24,7 +24,7 @@ const Home = () => {
         <div className="ml-8 grid font-[codeFont]">
           <div className="self-end">
             <motion.h1
-              className="text-white mb-8    text-4xl"
+              className="text-yellow-700 mb-8    text-4xl"
               animate={{
                 x: 15,
                 y: 15,
@@ -38,7 +38,7 @@ const Home = () => {
               My Journey
             </motion.h1>
           </div>
-          <p className="text-white  text-xl pr-32">
+          <p className="text-yellow-700  text-xl pr-32">
             It started in May 2021, when I accidentally saw a programming
             tutorial on Youtube. I did not know what programming is but there is
             no doubt that was love at first sight. I decided to broaden my

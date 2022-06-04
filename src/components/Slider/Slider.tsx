@@ -24,8 +24,12 @@ const Slider: React.FC<funcProps> = (props) => {
 
   return (
     <React.Fragment>
-      <div className="overflow-hidden bg-black">
-        <h1 className="text-center text-4xl text-white ">
+      <div className="overflow-hidden ">
+        <h1
+          className={`text-center ${
+            props.isSkills ? "text-4xl" : "text-2xl"
+          } text-yellow-700  font-[codeFont]`}
+        >
           {props.sliderTitle}
         </h1>
 

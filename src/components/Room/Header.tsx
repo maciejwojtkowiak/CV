@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <div>
-      <h1 className="text-white text-6xl font-[codeFont]">
+      <h1 className="text-yellow-700 text-6xl font-[codeFont]">
         Here everything began
       </h1>
     </div>
