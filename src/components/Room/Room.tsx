@@ -9,7 +9,7 @@ const Room = () => {
   useFrame((state, delta) => (modelRef.current!.rotation.x += 0.01));
   return (
     <Suspense>
-      <mesh ref={modelRef} position={[1, 1, 1]}>
+      <mesh ref={modelRef} position={[0, 0, 0]}>
         <primitive object={roomModel.scene} />
       </mesh>
     </Suspense>
