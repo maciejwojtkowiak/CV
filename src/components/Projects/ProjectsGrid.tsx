@@ -6,7 +6,7 @@ const ProjectsGrid = () => {
       <div className="border-2 border-indigo-500">
         <img
           src={recipeMaster}
-          className="object-fill h-full"
+          className="object-fill h-full transition hover:blur-sm"
           alt="recipemaster"
         />
       </div>
