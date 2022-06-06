@@ -1,16 +1,27 @@
+import { useState } from "react";
 import { FaMoon } from "react-icons/fa";
 
-const Navbar = () => {
+interface funcProps {
+  modeHandler: () => void;
+}
+
+const Navbar: React.FC<funcProps> = (props) => {
+  const changeModeHandler = () => {
+    props.modeHandler();
+  };
   return (
-    <div className="h-20 bg-black">
+    <div className="h-20 dark:bg-black ">
       <ul className="flex h-full place-content-between items-center text-yellow-700 px-12">
         <li className="text-4xl font-[codeFont]">{"<M>"}</li>
         <li className="text-2xl"></li>
         <li>
-          <div className=" grid place-items-center w-8 h-8 rounded-full bg-white">
+          <button
+            className=" grid place-items-center w-8 h-8 rounded-full bg-white border-2 border-yellow-700"
+            onClick={changeModeHandler}
+          >
             {" "}
             <FaMoon />
-          </div>
+          </button>
         </li>
       </ul>
     </div>
