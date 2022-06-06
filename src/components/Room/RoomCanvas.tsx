@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Header from "./Header";
 import Room from "./Room";
+import { motion } from "framer-motion";
 
 const RoomCanvas = () => {
   return (

@@ -2,11 +2,12 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Mesh } from "three";
+import { motion } from "framer-motion-3d";
 
 const Room = () => {
   const roomModel = useLoader(GLTFLoader, "room.glb");
   const modelRef = useRef<Mesh>(null);
-  useFrame((state, delta) => (modelRef.current!.rotation.x += 0.01));
+
   return (
     <Suspense>
       <mesh ref={modelRef} position={[0, 0, 0]}>

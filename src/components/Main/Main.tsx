@@ -4,10 +4,11 @@ import React from "react";
 import Landing from "../Landing/Landing";
 import Skills from "../Slider/Skills/Skills";
 import UsedTechnologies from "../Slider/UsedTechnologies/UsedTechnologies";
-import Projects from "../Slider/Projects/Projects";
+
 import RoomCanvas from "../Room/RoomCanvas";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
+import ProjectsGrid from "../Projects/ProjectsGrid";
 // jasny motyw, bezowy z brazowymi napisami
 const Main = () => {
   const [isDarkMode, setDarkMode] = useState<Boolean>(false);
@@ -28,7 +29,7 @@ const Main = () => {
           <Home />
           <Skills />
           <UsedTechnologies />
-          <Projects />
+          <ProjectsGrid />
           <Footer />
         </div>
       </div>
