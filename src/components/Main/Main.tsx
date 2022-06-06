@@ -16,19 +16,21 @@ const Main = () => {
   };
   return (
     <React.Fragment>
-      <div
-        className={`bg-gradient-to-t from-amber-100 ${
-          isDarkMode ? "dark" : ""
-        }`}
-      >
-        <Navbar modeHandler={onChangeMode} />
-        <Landing />
-        <RoomCanvas />
-        <Home />
-        <Skills />
-        <UsedTechnologies />
-        <Projects />
-        <Footer />
+      <div className={` ${isDarkMode ? "dark" : ""}`}>
+        <div
+          className={`${
+            isDarkMode ? "" : "bg-gradient-to-t from-amber-100"
+          } dark:bg-black `}
+        >
+          <Navbar modeHandler={onChangeMode} />
+          <Landing />
+          <RoomCanvas />
+          <Home />
+          <Skills />
+          <UsedTechnologies />
+          <Projects />
+          <Footer />
+        </div>
       </div>
     </React.Fragment>
   );

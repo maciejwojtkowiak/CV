@@ -4,7 +4,7 @@ import Room from "./Room";
 
 const RoomCanvas = () => {
   return (
-    <div className="h-screen  grid place-items-center ">
+    <div className="h-screen grid place-items-center dark:bg-black ">
       <Header />
       <div className="h-screen w-4/5">
         <Canvas camera={{ position: [1, 5, 1] }}>

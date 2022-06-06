@@ -34,7 +34,7 @@ const Landing = () => {
 
   return (
     <motion.div
-      className="h-screen grid  text-white content-center justify-center text-center "
+      className="h-screen grid dark:bg-black content-center justify-center text-center "
       variants={container}
       custom={1}
       initial="hidden"
@@ -48,7 +48,7 @@ const Landing = () => {
       >
         {line1Array.map((letter, i) => (
           <motion.span
-            className="text-yellow-700"
+            className="text-yellow-700 dark:text-white"
             key={letter + i}
             variants={nameAnimation}
           >

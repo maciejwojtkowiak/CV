@@ -7,9 +7,9 @@ interface funcProps {
 
 const SliderItem: React.FC<funcProps> = (props) => {
   return (
-    <div className="grid  text-center h-full  w-[32rem] bg-neutral-900 border-4 border-yellow-600 font-[codeFont]">
+    <div className="grid  text-center h-full  w-[32rem] bg-neutral-900 border-4 border-yellow-600 dark:border-indigo-500 font-[codeFont]">
       <div className="grid place-items-center  ">
-        <h1 className="text-white text-4xl  ">{props.title}</h1>
+        <h1 className="text-white  text-4xl  ">{props.title}</h1>
       </div>
 
       <img

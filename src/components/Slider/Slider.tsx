@@ -12,9 +12,6 @@ interface funcProps {
 const Slider: React.FC<funcProps> = (props) => {
   const [width, setWidth] = useState<number>(0);
   const widthOfContainer = useRef<HTMLDivElement>(null);
-  console.log(props.sliderTitle);
-  console.log("width");
-  console.log(width);
 
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
@@ -28,7 +25,7 @@ const Slider: React.FC<funcProps> = (props) => {
         <h1
           className={`text-center ${
             props.isSkills ? "text-4xl" : "text-2xl"
-          } text-yellow-700  font-[codeFont]`}
+          } text-yellow-700  font-[codeFont] dark:text-white`}
         >
           {props.sliderTitle}
         </h1>
