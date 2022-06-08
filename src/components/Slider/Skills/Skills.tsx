@@ -22,7 +22,9 @@ const Skills = () => {
     { slideName: "Redux", slideImgUrl: reduxImg },
     { slideName: "Tailwind", slideImgUrl: tailwindImg },
   ] as SlideList[];
-  return <Slider sliderTitle="Skills" slideList={skillObjectArray} />;
+  return (
+    <Slider sliderTitle="Skills" slideList={skillObjectArray} isSkills={true} />
+  );
 };
 
 export default Skills;

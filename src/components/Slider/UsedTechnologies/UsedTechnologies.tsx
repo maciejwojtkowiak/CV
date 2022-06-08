@@ -20,6 +20,7 @@ const UsedTechnologies = () => {
     <Slider
       sliderTitle="Technologies I worked with. (Only for a while)"
       slideList={technologiesList}
+      isSkills={false}
     />
   );
 };

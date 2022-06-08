@@ -6,6 +6,7 @@ import { SlideList } from "../../shared/types";
 interface funcProps {
   sliderTitle: string;
   slideList: SlideList[];
+  isSkills: boolean;
 }
 
 const Slider: React.FC<funcProps> = (props) => {
@@ -14,17 +15,18 @@ const Slider: React.FC<funcProps> = (props) => {
 
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
-      setWidth(
-        widthOfContainer.current.scrollWidth -
-          widthOfContainer.current.offsetWidth
-      );
+      setWidth(props.isSkills ? 3025 : 1393);
     }
   }, [widthOfContainer.current?.offsetWidth]);
 
   return (
     <React.Fragment>
-      <div className="overflow-hidden bg-black">
-        <h1 className="text-center text-4xl text-white ">
+      <div className="overflow-hidden ">
+        <h1
+          className={`text-center ${
+            props.isSkills ? "text-4xl" : "text-2xl"
+          } text-yellow-700  font-[codeFont] dark:text-white`}
+        >
           {props.sliderTitle}
         </h1>
 
@@ -48,6 +50,7 @@ const Slider: React.FC<funcProps> = (props) => {
           >
             {props.slideList.map((slide) => (
               <SliderItem
+                key={slide.slideName}
                 title={slide.slideName}
                 skillImage={slide.slideImgUrl}
               />
