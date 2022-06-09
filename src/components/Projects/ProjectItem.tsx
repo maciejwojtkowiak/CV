@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import reactImg from "../../images/react.png";
 
 interface funcProps {
   imgUrl: string;
@@ -8,7 +9,6 @@ interface funcProps {
 
 const ProjectItem: React.FC<funcProps> = (props) => {
   const [isHovered, setIsHovered] = useState<Boolean>(false);
-  console.log(isHovered);
   return (
     <motion.div
       className="relative"
@@ -23,9 +23,12 @@ const ProjectItem: React.FC<funcProps> = (props) => {
         />
       </div>
       {isHovered && (
-        <div className="w-full h-full absolute top-0 left-0 grid grid-rows-2 place-items-center">
-          <div className=" text-4xl">
+        <div className="w-full h-full absolute top-0 left-0 grid grid-rows-2 ">
+          <div className=" align-self-end justify-self-center text-4xl">
             <h2>{props.title}</h2>
+          </div>
+          <div className="align-self-start justify-self-center">
+            <img src={reactImg} alt="usedTech" className="w-16 h-16" />
           </div>
         </div>
       )}
