@@ -6,11 +6,9 @@ import { useId } from "react";
 const ProjectsGrid = () => {
   const id = useId();
   return (
-    <div className="w-full grid ">
-      <div className="grid  h-screen w-full p-8 gap-8 ">
-        <ProjectItem title="Recipemaster" imgUrl={recipeMaster} />
-        <ProjectItem title="Lion of Brabant" imgUrl={brabant} />
-      </div>
+    <div className="grid grid-rows-2 grid-cols-2 w-full p-8 gap-8 ">
+      <ProjectItem key={id} title="Recipemaster" imgUrl={recipeMaster} />
+      <ProjectItem key={id} title="Lion of Brabant" imgUrl={brabant} />
     </div>
   );
 };
