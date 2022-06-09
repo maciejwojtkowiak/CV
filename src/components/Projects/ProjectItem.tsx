@@ -7,6 +7,21 @@ interface funcProps {
   title: string;
 }
 
+const variants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+    y: 0,
+  },
+};
+
 const ProjectItem: React.FC<funcProps> = (props) => {
   const [isHovered, setIsHovered] = useState<Boolean>(false);
   return (
@@ -24,12 +39,17 @@ const ProjectItem: React.FC<funcProps> = (props) => {
       </div>
       {isHovered && (
         <div className="w-full h-full absolute top-0 left-0 grid grid-rows-2 ">
-          <div className=" align-self-end justify-self-center text-4xl">
+          <div className="  self-center justify-self-center text-4xl">
             <h2>{props.title}</h2>
           </div>
-          <div className="align-self-start justify-self-center">
+          <motion.div
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            className="self-start justify-self-center"
+          >
             <img src={reactImg} alt="usedTech" className="w-16 h-16" />
-          </div>
+          </motion.div>
         </div>
       )}
     </motion.div>
