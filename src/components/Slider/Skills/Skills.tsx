@@ -9,6 +9,7 @@ import nextImg from "../../../images/nextjs.png";
 import reduxImg from "../../../images/redux.png";
 import gitImg from "../../../images/git.png";
 import tailwindImg from "../../../images/tailwind.png";
+import scssImg from "../../../images/sass.png";
 
 const Skills = () => {
   const skillObjectArray = [
@@ -18,6 +19,7 @@ const Skills = () => {
     { slideName: "NextJS", slideImgUrl: nextImg },
     { slideName: "HTML5", slideImgUrl: htmlImg },
     { slideName: "CSS3", slideImgUrl: cssImg },
+    { slideName: "SCSS", slideImgUrl: scssImg },
     { slideName: "GIT", slideImgUrl: gitImg },
     { slideName: "Redux", slideImgUrl: reduxImg },
     { slideName: "Tailwind", slideImgUrl: tailwindImg },
