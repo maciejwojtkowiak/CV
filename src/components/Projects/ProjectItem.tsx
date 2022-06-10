@@ -1,24 +1,25 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import reactImg from "../../images/react.png";
+import TechItem from "./TechItem";
 
 interface funcProps {
   imgUrl: string;
   title: string;
 }
 
-const variants = {
+const titleAnimation = {
   hidden: {
     opacity: 0,
-    y: 100,
+    x: 100,
   },
 
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
-    y: 0,
+    x: 0,
   },
 };
 
@@ -34,22 +35,20 @@ const ProjectItem: React.FC<funcProps> = (props) => {
         <img
           src={props.imgUrl}
           alt="projectimage"
-          className={`${isHovered && "blur-md"}`}
+          className={`transition-all ${isHovered && "blur-md"}`}
         />
       </div>
       {isHovered && (
         <div className="w-full h-full absolute top-0 left-0 grid grid-rows-2 ">
-          <div className="  self-center justify-self-center text-4xl">
-            <h2>{props.title}</h2>
-          </div>
           <motion.div
-            variants={variants}
+            variants={titleAnimation}
             initial="hidden"
             animate="visible"
-            className="self-start justify-self-center"
+            className="  self-center justify-self-center text-4xl"
           >
-            <img src={reactImg} alt="usedTech" className="w-16 h-16" />
+            <h2>{props.title}</h2>
           </motion.div>
+          <TechItem imgUrl={reactImg} />
         </div>
       )}
     </motion.div>
