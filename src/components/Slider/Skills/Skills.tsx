@@ -9,7 +9,8 @@ import nextImg from "../../../images/nextjs.png";
 import reduxImg from "../../../images/redux.png";
 import gitImg from "../../../images/git.png";
 import tailwindImg from "../../../images/tailwind.png";
-import scssImg from "../../../images/sass.png";
+import scssImg from "../../../images/scss.png";
+import chakraImg from "../../../images/chakra.png";
 
 const Skills = () => {
   const skillObjectArray = [
@@ -23,6 +24,7 @@ const Skills = () => {
     { slideName: "GIT", slideImgUrl: gitImg },
     { slideName: "Redux", slideImgUrl: reduxImg },
     { slideName: "Tailwind", slideImgUrl: tailwindImg },
+    { slideName: "ChakraUI", slideImgUrl: chakraImg },
   ] as SlideList[];
   return (
     <Slider sliderTitle="Skills" slideList={skillObjectArray} isSkills={true} />

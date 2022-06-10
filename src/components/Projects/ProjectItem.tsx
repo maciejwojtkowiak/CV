@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import TechItem from "./TechItem";
+import TechItems from "./TechItems";
 
 interface funcProps {
   imgUrl: string;
   title: string;
   techUrls: string[];
+  isDarkBackground: boolean;
 }
 
 const titleAnimation = {
@@ -46,10 +47,16 @@ const ProjectItem: React.FC<funcProps> = (props) => {
             animate="visible"
             className="  self-center justify-self-center text-4xl"
           >
-            <h2>{props.title}</h2>
+            <h2
+              className={`font-[codeFont] text-4xl ${
+                props.isDarkBackground ? "text-white" : "text-black"
+              }`}
+            >
+              {props.title}
+            </h2>
           </motion.div>
 
-          <TechItem imgUrls={props.techUrls} />
+          <TechItems imgUrls={props.techUrls} />
         </div>
       )}
     </motion.div>
