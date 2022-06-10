@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import reactImg from "../../images/react.png";
 import TechItem from "./TechItem";
 
 interface funcProps {
   imgUrl: string;
   title: string;
+  techUrls: string[];
 }
 
 const titleAnimation = {
@@ -48,7 +48,8 @@ const ProjectItem: React.FC<funcProps> = (props) => {
           >
             <h2>{props.title}</h2>
           </motion.div>
-          <TechItem imgUrl={reactImg} />
+
+          <TechItem imgUrls={props.techUrls} />
         </div>
       )}
     </motion.div>
