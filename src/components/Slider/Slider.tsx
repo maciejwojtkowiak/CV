@@ -15,13 +15,16 @@ const Slider: React.FC<funcProps> = (props) => {
 
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
-      setWidth(props.isSkills ? 3025 : 1393);
+      setWidth(
+        widthOfContainer.current.scrollWidth -
+          widthOfContainer.current?.offsetWidth
+      );
     }
   }, [widthOfContainer.current?.offsetWidth]);
 
   return (
     <React.Fragment>
-      <div className="overflow-hidden ">
+      <div className="overflow-hidden p-12 ">
         <h1
           className={`text-center ${
             props.isSkills ? "text-4xl" : "text-2xl"
@@ -34,9 +37,9 @@ const Slider: React.FC<funcProps> = (props) => {
           className="h-full h-[32rem] "
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
-          initial={{ transform: "translateX(0%)" }}
+          initial={{ transform: `translateX(${width}px)` }}
           animate={{
-            transform: `translateX(-100%)`,
+            transform: `translateX(-${width}px)`,
           }}
           transition={{
             duration: 15,

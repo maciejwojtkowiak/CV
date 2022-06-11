@@ -1,5 +1,5 @@
 const Contact = () => {
-  return <div className="h-screen bg-red-500"></div>;
+  return <div></div>;
 };
 
 export default Contact;

@@ -9,7 +9,8 @@ import RoomCanvas from "../Room/RoomCanvas";
 import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
 import ProjectsGrid from "../Projects/ProjectsGrid";
-// jasny motyw, bezowy z brazowymi napisami
+import Contact from "../Contact/Contact";
+
 const Main = () => {
   const [isDarkMode, setDarkMode] = useState<Boolean>(false);
   const onChangeMode = () => {
@@ -30,6 +31,7 @@ const Main = () => {
           <Skills />
           <UsedTechnologies />
           <ProjectsGrid />
+          <Contact />
           <Footer />
         </div>
       </div>
