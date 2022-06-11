@@ -1,5 +1,6 @@
-import recipeMaster from "../../images/Projects/recipemaster.png";
-import brabant from "../../images/Projects/brabant.png";
+import recipeMasterImg from "../../images/Projects/recipemaster.png";
+import brabantImg from "../../images/Projects/brabant.png";
+import italianHouseImg from "../../images/Projects/italian.png";
 import ProjectItem from "./ProjectItem";
 import React, { useId } from "react";
 import reactImg from "../../images/react.png";
@@ -26,6 +27,7 @@ const ProjectsGrid = () => {
     gitImg,
   ];
   const lionOfBrabantUrls = [jsImg, htmlImg, scssImg, gitImg];
+  const italianHouseUrls = [reactImg, jsImg, cssImg, reduxImg, gitImg];
   return (
     <React.Fragment>
       <ProjectsHeader />
@@ -35,14 +37,22 @@ const ProjectsGrid = () => {
           isDarkBackground={false}
           techUrls={recipeMasterUrls}
           title="Recipemaster"
-          imgUrl={recipeMaster}
+          imgUrl={recipeMasterImg}
         />
         <ProjectItem
           key={id}
           isDarkBackground={true}
           techUrls={lionOfBrabantUrls}
           title="Lion of Brabant"
-          imgUrl={brabant}
+          imgUrl={brabantImg}
+        />
+
+        <ProjectItem
+          key={id}
+          isDarkBackground={true}
+          techUrls={italianHouseUrls}
+          title="Italian House"
+          imgUrl={italianHouseImg}
         />
       </div>
     </React.Fragment>

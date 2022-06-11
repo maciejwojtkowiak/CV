@@ -14,8 +14,8 @@ const Contact = () => {
       <h1 className="text-yellow-700 text-center text-4xl font-[codeFont]">
         Contact
       </h1>
-      <div className="grid grid-cols-2 place-items-center border-t-2 border-yellow-700">
-        <div>
+      <div className="grid grid-cols-2 place-items-center border-t-2 border-yellow-700 ">
+        <div className="grid place-items-center ">
           <h1 className="text-center text-yellow-700 text-center text-2xl font-[codeFont]">
             Contact me
           </h1>
@@ -23,11 +23,11 @@ const Contact = () => {
             <input type="email" />
           </form>
         </div>
-        <div>
-          <h1 className="text-center text-yellow-700 text-center text-2xl font-[codeFont]">
+        <div className="grid place-items-center">
+          <h1 className=" text-yellow-700 text-center text-2xl font-[codeFont]">
             Personal Informations
           </h1>
-          '
+
           {!dataIsShown && (
             <input
               value={passwordInput}
