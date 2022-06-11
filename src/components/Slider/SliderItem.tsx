@@ -8,8 +8,8 @@ interface funcProps {
 const SliderItem: React.FC<funcProps> = (props) => {
   return (
     <div className="grid  text-center w-[32rem] h-[32rem] bg-neutral-900 border-4 border-yellow-600 dark:border-indigo-500 font-[codeFont]">
-      <div className="grid place-items-center  ">
-        <h1 className="text-white  text-4xl  ">{props.title}</h1>
+      <div className="grid place-items-center">
+        <h1 className="text-white text-4xl">{props.title}</h1>
       </div>
 
       <img

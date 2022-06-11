@@ -25,7 +25,7 @@ const ProjectsGrid = () => {
     firebaseImg,
     gitImg,
   ];
-  const lionOfBrabantUrls = [jsImg, htmlImg, scssImg];
+  const lionOfBrabantUrls = [jsImg, htmlImg, scssImg, gitImg];
   return (
     <React.Fragment>
       <ProjectsHeader />
