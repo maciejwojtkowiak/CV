@@ -15,7 +15,10 @@ const Slider: React.FC<funcProps> = (props) => {
 
   useEffect(() => {
     if (widthOfContainer.current?.offsetWidth) {
-      setWidth(props.isSkills ? 3025 : 1393);
+      setWidth(
+        widthOfContainer.current.scrollWidth -
+          widthOfContainer.current?.offsetWidth
+      );
     }
   }, [widthOfContainer.current?.offsetWidth]);
 
@@ -36,7 +39,7 @@ const Slider: React.FC<funcProps> = (props) => {
           dragConstraints={{ right: 0, left: -width }}
           initial={{ transform: "translateX(0%)" }}
           animate={{
-            transform: `translateX(-100%)`,
+            transform: `translateX(-${width}px)`,
           }}
           transition={{
             duration: 15,

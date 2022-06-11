@@ -10,7 +10,7 @@ import Navbar from "../Navbar/Navbar";
 import { useState } from "react";
 import ProjectsGrid from "../Projects/ProjectsGrid";
 import Contact from "../Contact/Contact";
-// jasny motyw, bezowy z brazowymi napisami
+
 const Main = () => {
   const [isDarkMode, setDarkMode] = useState<Boolean>(false);
   const onChangeMode = () => {
