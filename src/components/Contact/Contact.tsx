@@ -3,13 +3,19 @@ import ContactInput from "./ContactInput";
 const secretPass = "12345";
 const Contact = () => {
   const [passwordInput, setPasswordInput] = useState<string>("");
+  const [emailInput, setEmailInput] = useState<string>("");
   const [dataIsShown, setDataIsShown] = useState<boolean>(false);
-  const onChangePasswordInput = (val: string) => {
-    setPasswordInput(val);
+  const onChangePasswordInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    changeValueHandler: (val: string) => void
+  ) => {
+    changeValueHandler(e.target.value);
   };
   useEffect(() => {
     if (passwordInput === secretPass) setDataIsShown(true);
   }, [passwordInput]);
+
+  console.log(emailInput);
   return (
     <div>
       <h1 className="text-yellow-700 text-center text-4xl font-[codeFont]">
@@ -21,7 +27,12 @@ const Contact = () => {
             Contact me
           </h1>
           <form>
-            <input type="email" />
+            <ContactInput
+              inputValue={emailInput}
+              onChangeHandler={(e) => onChangePasswordInput(e, setEmailInput)}
+              inputPlaceholder="Your email"
+              inputType="email"
+            />
           </form>
         </div>
         <div className="grid place-items-center">
@@ -34,7 +45,9 @@ const Contact = () => {
               inputValue={passwordInput}
               inputPlaceholder="You have to have a special password to see informations here."
               inputType="password"
-              onChangeHandler={onChangePasswordInput}
+              onChangeHandler={(e) =>
+                onChangePasswordInput(e, setPasswordInput)
+              }
             />
           )}
           {dataIsShown && (
