@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import ContactInput from "./ContactInput";
 const secretPass = "12345";
 const Contact = () => {
   const [passwordInput, setPasswordInput] = useState<string>("");
   const [dataIsShown, setDataIsShown] = useState<boolean>(false);
-  const onChangePasswordInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPasswordInput(e.target.value);
+  const onChangePasswordInput = (val: string) => {
+    setPasswordInput(val);
   };
   useEffect(() => {
     if (passwordInput === secretPass) setDataIsShown(true);
@@ -29,11 +30,11 @@ const Contact = () => {
           </h1>
 
           {!dataIsShown && (
-            <input
-              value={passwordInput}
-              placeholder="You have to have a special password to see informations here."
-              type="password"
-              onChange={onChangePasswordInput}
+            <ContactInput
+              inputValue={passwordInput}
+              inputPlaceholder="You have to have a special password to see informations here."
+              inputType="password"
+              onChangeHandler={onChangePasswordInput}
             />
           )}
           {dataIsShown && (
