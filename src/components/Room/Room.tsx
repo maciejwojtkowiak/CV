@@ -1,9 +1,7 @@
-import { MeshProps, useFrame, useLoader } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Mesh } from "three";
-import { motion } from "framer-motion-3d";
-import { MotionValue } from "framer-motion";
 
 interface funcProps {
   rotateX: number;

@@ -1,6 +1,7 @@
 import recipeMasterImg from "../../images/Projects/recipemaster.png";
 import brabantImg from "../../images/Projects/brabant.png";
 import italianHouseImg from "../../images/Projects/italian.png";
+import ticTacToeImg from "../../images/Projects/tictac.png";
 import ProjectItem from "./ProjectItem";
 import React, { useId } from "react";
 import reactImg from "../../images/react.png";
@@ -30,6 +31,7 @@ const ProjectsGrid = () => {
   ];
   const lionOfBrabantUrls = [jsImg, htmlImg, scssImg, gitImg];
   const italianHouseUrls = [reactImg, jsImg, cssImg, reduxImg, gitImg];
+  const ticTacToeUrls = [typescriptImg, htmlImg, cssImg];
   return (
     <React.Fragment>
       <motion.div
@@ -39,7 +41,7 @@ const ProjectsGrid = () => {
         whileInView="visible"
       >
         <ProjectsHeader />
-        <div className="grid grid-rows-2 grid-cols-2 w-full p-8 gap-8 ">
+        <div className="grid grid-flow-row auto-rows-max grid-cols-2 p-8 gap-8 ">
           <ProjectItem
             key={id}
             isDarkBackground={false}
@@ -61,6 +63,13 @@ const ProjectsGrid = () => {
             techUrls={italianHouseUrls}
             title="Italian House"
             imgUrl={italianHouseImg}
+          />
+          <ProjectItem
+            key={id}
+            isDarkBackground={true}
+            techUrls={ticTacToeUrls}
+            title="TicTacToe Game"
+            imgUrl={ticTacToeImg}
           />
         </div>
       </motion.div>

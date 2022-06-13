@@ -26,19 +26,19 @@ const titleAnimation = {
 
 const ProjectItem: React.FC<funcProps> = (props) => {
   const [isHovered, setIsHovered] = useState<Boolean>(false);
+  // zrob lepsze zdjecia bez dolnej krawedzi
   return (
     <motion.div
-      className="relative"
+      className="relative w-[45vw] h-[45vh]  border-4 border-yellow-600"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <div className=" border-4 border-yellow-600 ">
-        <img
-          src={props.imgUrl}
-          alt="projectimage"
-          className={`transition-all ${isHovered && "blur-md"}`}
-        />
-      </div>
+      <img
+        src={props.imgUrl}
+        alt="projectimage"
+        className={`h-full w-full  transition-all ${isHovered && "blur-md "}`}
+      />
+
       {isHovered && (
         <div className="w-full h-full absolute top-0 left-0 grid grid-rows-2 ">
           <motion.div
