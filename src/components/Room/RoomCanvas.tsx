@@ -4,15 +4,7 @@ import Room from "./Room";
 import { motion } from "framer-motion";
 import useMeasure from "react-use-measure";
 import { useState } from "react";
-
-const variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
+import { viewInAnimation } from "../../framer/viewInAnimation";
 
 const RoomCanvas = () => {
   const [ref, bounds] = useMeasure({ scroll: false });
@@ -28,7 +20,8 @@ const RoomCanvas = () => {
       <Header />
       <motion.div
         className="h-screen w-4/5 cursor-pointer"
-        variants={variants}
+        variants={viewInAnimation}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="visible"
         ref={ref}

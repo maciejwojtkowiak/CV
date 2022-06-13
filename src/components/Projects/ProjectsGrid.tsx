@@ -14,6 +14,8 @@ import gitImg from "../../images/git.png";
 import reduxImg from "../../images/redux.png";
 import ProjectsHeader from "./ProjectsHeader";
 import chakraImg from "../../images/chakra.png";
+import { motion } from "framer-motion";
+import { viewInAnimation } from "../../framer/viewInAnimation";
 
 const ProjectsGrid = () => {
   const id = useId();
@@ -30,31 +32,38 @@ const ProjectsGrid = () => {
   const italianHouseUrls = [reactImg, jsImg, cssImg, reduxImg, gitImg];
   return (
     <React.Fragment>
-      <ProjectsHeader />
-      <div className="grid grid-rows-2 grid-cols-2 w-full p-8 gap-8 ">
-        <ProjectItem
-          key={id}
-          isDarkBackground={false}
-          techUrls={recipeMasterUrls}
-          title="Recipemaster"
-          imgUrl={recipeMasterImg}
-        />
-        <ProjectItem
-          key={id}
-          isDarkBackground={true}
-          techUrls={lionOfBrabantUrls}
-          title="Lion of Brabant"
-          imgUrl={brabantImg}
-        />
+      <motion.div
+        variants={viewInAnimation}
+        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <ProjectsHeader />
+        <div className="grid grid-rows-2 grid-cols-2 w-full p-8 gap-8 ">
+          <ProjectItem
+            key={id}
+            isDarkBackground={false}
+            techUrls={recipeMasterUrls}
+            title="Recipemaster"
+            imgUrl={recipeMasterImg}
+          />
+          <ProjectItem
+            key={id}
+            isDarkBackground={true}
+            techUrls={lionOfBrabantUrls}
+            title="Lion of Brabant"
+            imgUrl={brabantImg}
+          />
 
-        <ProjectItem
-          key={id}
-          isDarkBackground={true}
-          techUrls={italianHouseUrls}
-          title="Italian House"
-          imgUrl={italianHouseImg}
-        />
-      </div>
+          <ProjectItem
+            key={id}
+            isDarkBackground={true}
+            techUrls={italianHouseUrls}
+            title="Italian House"
+            imgUrl={italianHouseImg}
+          />
+        </div>
+      </motion.div>
     </React.Fragment>
   );
 };

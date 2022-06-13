@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import { viewInAnimation } from "../../framer/viewInAnimation";
 
 const Home = () => {
   return (
-    <div className="h-screen overflow-hidden dark:bg-black">
+    <motion.div
+      variants={viewInAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="h-screen overflow-hidden dark:bg-black"
+    >
       <div className="h-full grid grid-flow-col text-yellow-700 dark:text-white">
         <div className=" self-center font-[codeFont] text-[15rem]">
           <motion.div
@@ -52,7 +59,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
