@@ -1,10 +1,18 @@
 import { Canvas } from "@react-three/fiber";
 import Header from "./Header";
 import Room from "./Room";
-import { motion, MotionConfig, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import useMeasure from "react-use-measure";
-import { Camera } from "three";
 import { useState } from "react";
+
+const variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
 
 const RoomCanvas = () => {
   const [ref, bounds] = useMeasure({ scroll: false });
@@ -20,6 +28,9 @@ const RoomCanvas = () => {
       <Header />
       <motion.div
         className="h-screen w-4/5 cursor-pointer"
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
         ref={ref}
         onHoverStart={() => {
           setIsHover(true);

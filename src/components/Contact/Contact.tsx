@@ -5,7 +5,7 @@ const Contact = () => {
   const [passwordInput, setPasswordInput] = useState<string>("");
   const [emailInput, setEmailInput] = useState<string>("");
   const [dataIsShown, setDataIsShown] = useState<boolean>(false);
-  const onChangePasswordInput = (
+  const onInputValueChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     changeValueHandler: (val: string) => void
   ) => {
@@ -29,7 +29,7 @@ const Contact = () => {
           <form>
             <ContactInput
               inputValue={emailInput}
-              onChangeHandler={(e) => onChangePasswordInput(e, setEmailInput)}
+              onChangeHandler={(e) => onInputValueChange(e, setEmailInput)}
               inputPlaceholder="Your email"
               inputType="email"
             />
@@ -45,9 +45,7 @@ const Contact = () => {
               inputValue={passwordInput}
               inputPlaceholder="You have to have a special password to see informations here."
               inputType="password"
-              onChangeHandler={(e) =>
-                onChangePasswordInput(e, setPasswordInput)
-              }
+              onChangeHandler={(e) => onInputValueChange(e, setPasswordInput)}
             />
           )}
           {dataIsShown && (
