@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import ContactInput from "./ContactInput";
 import { FaLinkedin, FaGithub, FaGoogle } from "react-icons/fa";
 const secretPass = "12345";
+const iconHeight = 12;
+const iconWidth = 12;
+const iconColor = "yellow-700";
 const Contact = () => {
   const [passwordInput, setPasswordInput] = useState<string>("");
   const [emailInput, setEmailInput] = useState<string>("");
@@ -23,17 +26,20 @@ const Contact = () => {
       </h1>
       <div className="grid grid-cols-2 place-items-center border-t-2 border-yellow-700 ">
         <div className="grid place-items-center ">
-          <h1 className="text-center text-yellow-700 text-center text-2xl font-[codeFont]">
+          <h1 className="text-center text-yellow-700 text-center text-2xl font-[codeFont] ">
             Contact me
           </h1>
-          <form>
-            <ContactInput
-              inputValue={emailInput}
-              onChangeHandler={(e) => onInputValueChange(e, setEmailInput)}
-              inputPlaceholder="Your email"
-              inputType="email"
+          <div className="flex gap-8  ">
+            <FaLinkedin
+              className={`h-${iconHeight} w-${iconWidth} text-${iconColor}`}
             />
-          </form>
+            <FaGithub
+              className={`h-${iconHeight} w-${iconWidth} text-${iconColor}`}
+            />
+            <FaGoogle
+              className={`h-${iconHeight} w-${iconWidth} text-${iconColor}`}
+            />
+          </div>
         </div>
         <div className="grid place-items-center">
           <h1 className=" text-yellow-700 text-center text-2xl font-[codeFont]">
