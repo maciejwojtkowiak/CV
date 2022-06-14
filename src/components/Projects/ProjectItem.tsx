@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TechItems from "./TechItems";
 
@@ -23,10 +23,27 @@ const titleAnimation = {
     x: 0,
   },
 };
-
+// zrob lepsze zdjecia bez dolnej krawedzi, do tego zrób liste obiektow itemów
 const ProjectItem: React.FC<funcProps> = (props) => {
   const [isHovered, setIsHovered] = useState<Boolean>(false);
-  // zrob lepsze zdjecia bez dolnej krawedzi
+  const [githubData, setGithubData] = useState<string>("");
+  const correctTitle = props.title.replace(" ", "-");
+  // async function getGithubData() {
+  //   async function getGithubResponse<T>(): Promise<T> {
+  //     const response = await fetch(
+  //       `https://api.github.com/repos/maciejwojtkowiak/${correctTitle}`
+  //     );
+  //     return (await response.json()) as Promise<T>;
+  //   }
+  //   const data = await getGithubResponse();
+  //   console.log("data");
+  //   console.log(data);
+  // }
+
+  // useEffect(() => {
+  //   getGithubData();
+  // }, []);
+
   return (
     <motion.div
       className="relative w-[45vw] h-[45vh]  border-4 border-yellow-600"

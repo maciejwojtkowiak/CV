@@ -46,7 +46,7 @@ const ProjectsGrid = () => {
             key={id}
             isDarkBackground={false}
             techUrls={recipeMasterUrls}
-            title="Recipemaster"
+            title="recipemaster"
             imgUrl={recipeMasterImg}
           />
           <ProjectItem
