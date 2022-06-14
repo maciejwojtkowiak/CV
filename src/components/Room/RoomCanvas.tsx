@@ -16,7 +16,7 @@ const RoomCanvas = () => {
   console.log(mouseX);
 
   return (
-    <div className="h-screen grid place-items-center dark:bg-black ">
+    <div className="grid place-items-center dark:bg-black ">
       <Header />
       <motion.div
         className="h-screen w-4/5 cursor-pointer"

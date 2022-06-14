@@ -14,7 +14,10 @@ const Room: React.FC<funcProps> = (props) => {
 
   return (
     <Suspense>
-      <mesh ref={modelRef} rotation={[props.rotateX / 1000, 0, 0]}>
+      <mesh
+        ref={modelRef}
+        rotation={[props.rotateX / 1000, props.rotateY / 2000, 0]}
+      >
         <primitive object={roomModel.scene} />
       </mesh>
     </Suspense>

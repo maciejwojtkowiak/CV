@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ContactInput from "./ContactInput";
+import { FaLinkedin, FaGithub, FaGoogle } from "react-icons/fa";
 const secretPass = "12345";
 const Contact = () => {
   const [passwordInput, setPasswordInput] = useState<string>("");
@@ -15,7 +16,6 @@ const Contact = () => {
     if (passwordInput === secretPass) setDataIsShown(true);
   }, [passwordInput]);
 
-  console.log(emailInput);
   return (
     <div>
       <h1 className="text-yellow-700 text-center text-4xl font-[codeFont]">
