@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import ContactInput from "./ContactInput";
 import { FaLinkedin, FaGithub, FaGoogle } from "react-icons/fa";
 const secretPass = "12345";
-const iconHeight = 12;
-const iconWidth = 12;
 const iconColor = "yellow-700";
 const Contact = () => {
   const [passwordInput, setPasswordInput] = useState<string>("");
@@ -30,15 +28,15 @@ const Contact = () => {
             Contact me
           </h1>
           <div className="flex gap-8  ">
-            <FaLinkedin
-              className={`h-${iconHeight} w-${iconWidth} text-${iconColor}`}
-            />
-            <FaGithub
-              className={`h-${iconHeight} w-${iconWidth} text-${iconColor}`}
-            />
-            <FaGoogle
-              className={`h-${iconHeight} w-${iconWidth} text-${iconColor}`}
-            />
+            <a href="https://www.linkedin.com/in/maciej-wojtkowiak-4a2aa223a/">
+              <FaLinkedin className={`h-16 w-16  text-${iconColor}`} />
+            </a>
+            <a href="https://github.com/maciejwojtkowiak">
+              <FaGithub className={`h-16 w-16 text-${iconColor}`} />
+            </a>
+            <a href="mailto:mac.woj1000@gmail.com">
+              <FaGoogle className={`h-16 w-16  text-${iconColor}`} />
+            </a>
           </div>
         </div>
         <div className="grid place-items-center">

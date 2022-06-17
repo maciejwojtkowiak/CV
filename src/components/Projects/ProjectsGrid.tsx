@@ -30,7 +30,7 @@ const ProjectsGrid = () => {
   ];
   const lionOfBrabantUrls = [jsImg, htmlImg, scssImg, gitImg];
   const italianHouseUrls = [reactImg, jsImg, cssImg, reduxImg, gitImg];
-  const ticTacToeUrls = [typescriptImg, htmlImg, cssImg];
+  const ticTacToeUrls = [typescriptImg, htmlImg, cssImg, gitImg];
   const projectsArray = [
     {
       title: "recipemaster",
