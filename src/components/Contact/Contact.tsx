@@ -22,12 +22,9 @@ const Contact = () => {
       <h1 className="text-yellow-700 text-center text-4xl font-[codeFont]">
         Contact
       </h1>
-      <div className="grid grid-cols-2 place-items-center border-t-2 border-yellow-700 ">
+      <div className="grid place-items-center border-t-2 border-yellow-700 ">
         <div className="grid place-items-center ">
-          <h1 className="text-center text-yellow-700 text-center text-2xl font-[codeFont] ">
-            Contact me
-          </h1>
-          <div className="flex gap-8  ">
+          <div className="flex gap-8 py-16 ">
             <a href="https://www.linkedin.com/in/maciej-wojtkowiak-4a2aa223a/">
               <FaLinkedin className={`h-16 w-16  text-${iconColor}`} />
             </a>
@@ -38,25 +35,6 @@ const Contact = () => {
               <FaGoogle className={`h-16 w-16  text-${iconColor}`} />
             </a>
           </div>
-        </div>
-        <div className="grid place-items-center">
-          <h1 className=" text-yellow-700 text-center text-2xl font-[codeFont]">
-            Personal Informations
-          </h1>
-
-          {!dataIsShown && (
-            <ContactInput
-              inputValue={passwordInput}
-              inputPlaceholder="You have to have a special password to see informations here."
-              inputType="password"
-              onChangeHandler={(e) => onInputValueChange(e, setPasswordInput)}
-            />
-          )}
-          {dataIsShown && (
-            <a href="https://drive.google.com/file/d/1AxgMK-n9kZOl3kcQI5yrJxYGWM_1wNDU/view?usp=sharing">
-              My resume
-            </a>
-          )}
         </div>
       </div>
     </div>
