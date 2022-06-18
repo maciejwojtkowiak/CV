@@ -46,7 +46,7 @@ const ProjectItem: React.FC<funcProps> = (props) => {
 
   return (
     <motion.div
-      className="relative w-[45vw] h-[45vh]  border-4 border-yellow-600"
+      className="relative w-[45vw] h-[45vh]  border-4 border-yellow-600 dark:border-white"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >

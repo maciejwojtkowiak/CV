@@ -8,7 +8,7 @@ const Home = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="h-screen overflow-hidden dark:bg-black"
+      className="h-[80vh] overflow-hidden dark:bg-black"
     >
       <div className="h-full grid grid-flow-col text-yellow-700 dark:text-white">
         <div className=" self-center font-[codeFont] text-[15rem]">
