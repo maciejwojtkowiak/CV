@@ -1,23 +1,7 @@
-import React, { useEffect, useState } from "react";
-import ContactInput from "./ContactInput";
-import { FaLinkedin, FaGithub, FaGoogle } from "react-icons/fa";
-const secretPass = "12345";
-const iconColor = "yellow-700";
-const darkIconColor = "white";
+import { FaLinkedin, FaGithub, FaGoogle } from 'react-icons/fa';
+const iconColor = 'yellow-700';
+const darkIconColor = 'white';
 const Contact = () => {
-  const [passwordInput, setPasswordInput] = useState<string>("");
-  const [emailInput, setEmailInput] = useState<string>("");
-  const [dataIsShown, setDataIsShown] = useState<boolean>(false);
-  const onInputValueChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    changeValueHandler: (val: string) => void
-  ) => {
-    changeValueHandler(e.target.value);
-  };
-  useEffect(() => {
-    if (passwordInput === secretPass) setDataIsShown(true);
-  }, [passwordInput]);
-
   return (
     <div>
       <h1 className="text-yellow-700 dark:text-white text-center text-4xl font-[codeFont]">

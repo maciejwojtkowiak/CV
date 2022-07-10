@@ -4,7 +4,7 @@ const Footer = () => {
       <ul className="flex h-full place-content-between items-center text-yellow-700 dark:text-white px-12">
         <li className="text-2xl"></li>
         <li></li>
-        <li className="text-4xl font-[codeFont] ">{"</M>"}</li>
+        <li className="text-4xl font-[codeFont] ">{'</M>'}</li>
       </ul>
     </div>
   );
