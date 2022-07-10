@@ -1,10 +1,10 @@
-import { Canvas } from "@react-three/fiber";
-import Header from "./Header";
-import Room from "./Room";
-import { motion } from "framer-motion";
-import useMeasure from "react-use-measure";
-import { useState } from "react";
-import { viewInAnimation } from "../../framer/viewInAnimation";
+import { Canvas } from '@react-three/fiber';
+import Header from './Header';
+import Room from './Room';
+import { motion } from 'framer-motion';
+import useMeasure from 'react-use-measure';
+import { useState } from 'react';
+import { viewInAnimation } from '../../framer/viewInAnimation';
 
 const RoomCanvas = () => {
   const [ref, bounds] = useMeasure({ scroll: false });
@@ -12,8 +12,14 @@ const RoomCanvas = () => {
   const [isPress, setIsPress] = useState(false);
   const [mouseY, setMouseY] = useState<number>(0);
   const [mouseX, setMouseX] = useState<number>(0);
-  console.log(mouseY);
-  console.log(mouseX);
+
+  const setRotationX = (rotation: number) => {
+    setMouseX(rotation);
+  };
+
+  const setRotationY = (rotation: number) => {
+    setMouseY(rotation);
+  };
 
   return (
     <div className="grid place-items-center dark:bg-black ">
@@ -36,7 +42,6 @@ const RoomCanvas = () => {
         onTapCancel={() => setIsPress(false)}
         onPointerMove={(e) => {
           setMouseX(e.clientX - bounds.x - bounds.width / 2);
-          setMouseY(e.clientY - bounds.y - bounds.height / 2);
         }}
       >
         <Canvas camera={{ position: [1, 5, 1] }}>
@@ -48,7 +53,13 @@ const RoomCanvas = () => {
             position={[1, 1, 1]}
             castShadow
           />
-          <Room rotateX={mouseX} rotateY={mouseY} />
+          <Room
+            rotateX={mouseX}
+            rotateY={mouseY}
+            setRotateX={setRotationX}
+            setRotateY={setRotationY}
+            isHovered={isHover}
+          />
         </Canvas>
       </motion.div>
     </div>
