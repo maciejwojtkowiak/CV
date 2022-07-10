@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber";
 import Header from "./Header";
 import Room from "./Room";
-import { motion, MotionConfig, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import useMeasure from "react-use-measure";
-import { Camera } from "three";
 import { useState } from "react";
+import { viewInAnimation } from "../../framer/viewInAnimation";
 
 const RoomCanvas = () => {
   const [ref, bounds] = useMeasure({ scroll: false });
@@ -16,10 +16,14 @@ const RoomCanvas = () => {
   console.log(mouseX);
 
   return (
-    <div className="h-screen grid place-items-center dark:bg-black ">
+    <div className="grid place-items-center dark:bg-black ">
       <Header />
       <motion.div
         className="h-screen w-4/5 cursor-pointer"
+        variants={viewInAnimation}
+        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
         ref={ref}
         onHoverStart={() => {
           setIsHover(true);
